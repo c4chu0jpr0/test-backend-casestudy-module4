@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List Categories</title>
+</head>
+<body>
+<h1>List Categories</h1>
+<p><a href="/categories/create">Create new Categories</a></p>
+
+<table border="1">
+    <tr>
+        <td>Name</td>
+        <td>Img</td>
+    </tr>
+    <tr th:each="s : ${list}">
+        <td th:text="${s.getName()}"></td>
+        <td><img th:src="@{'/i/'+ ${s.getImg()}}" width="100"></td>
+    </tr>
+</table>
+</body>
+</html>

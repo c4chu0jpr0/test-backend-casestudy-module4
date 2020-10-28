@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Create new categorie</h1>
+<p><a href="/categories">Back to list</a></p>
+<form method="post" th:object="${categories}" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input th:field="*{name}"></td>
+        </tr>
+        <tr>
+            <td>image</td>
+            <td><input type="file" th:field="*{ava}"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="create"/></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

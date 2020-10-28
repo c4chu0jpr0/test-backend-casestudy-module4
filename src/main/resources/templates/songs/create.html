@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body><h1>Create new categorie</h1>
+<p><a href="/songs">Back to list</a></p>
+<form method="post" th:object="${song}" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input th:field="*{name}"></td>
+        </tr>
+        <tr>
+            <td>Singer</td>
+            <td><input th:field="*{singer}"></td>
+        </tr>
+        <tr>
+            <td>Producer</td>
+            <td><input th:field="*{producer}"></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><input th:field="*{description}"></td>
+        </tr>
+        <tr>
+            <td>File Mp3</td>
+            <td><input type="file" th:field="*{mp3}"></td>
+        </tr>
+        <tr>
+            <td>Categories</td>
+            <td>
+                <select th:field="*{category}">
+                    <option th:each="c: ${categories}" th:value="${c.id}" th:text="${c.name}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="create"/></td>
+        </tr>
+    </table>
+</form>
+
+
+</body>
+</html>
